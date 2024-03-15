@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <h1>Signup Page</h1>
+    <%- include ("_nav.ejs") %>
+    <h3>Signup</h3>
+    <form action="http://localhost:5000/signup" method="get">
+      <div>
+        <label for="fullname">Full name</label>
+        <input type="text" name="fullname" id="fullname" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob" />
+      </div>
+      <div>
+        <label for="pass">Password</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <div>
+        <label for="confirm-pass">Confirm Password</label>
+        <input type="password" name="confirm-pass" id="confirm-pass" />
+      </div>
+      <div>
+        <input type="submit" value="Signup" />
+      </div>
+    </form>
+  </body>
+</html>
