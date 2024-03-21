@@ -10,7 +10,10 @@
     <h1>Signup Page</h1>
     <%- include ("_nav.ejs") %>
     <h3>Signup</h3>
-    <form action="http://localhost:5000/signup" method="get">
+    <!-- the data/object rendered alongside a view is called the locals object -->
+    <% if (locals.error){ %>
+    <form action="http://localhost:5000/signup" method="POST">
+      <p style="color: orangered"><%= errMessage %></p>
       <div>
         <label for="fullname">Full name</label>
         <input type="text" name="fullname" id="fullname" />
@@ -24,16 +27,51 @@
         <input type="date" name="dob" id="dob" />
       </div>
       <div>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" id="phone" value="+254" />
+      </div>
+      <div>
         <label for="pass">Password</label>
         <input type="password" name="password" id="password" />
       </div>
       <div>
         <label for="confirm-pass">Confirm Password</label>
-        <input type="password" name="confirm-pass" id="confirm-pass" />
+        <input type="password" name="confirm_pass" id="confirm-pass" />
       </div>
       <div>
         <input type="submit" value="Signup" />
       </div>
     </form>
+    <% } else { %>
+    <form action="http://localhost:5000/signup" method="POST">
+      <div>
+        <label for="fullname">Full name</label>
+        <input type="text" name="fullname" id="fullname" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div>
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" id="dob" />
+      </div>
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" id="phone" value="+254" />
+      </div>
+      <div>
+        <label for="pass">Password</label>
+        <input type="password" name="password" id="password" />
+      </div>
+      <div>
+        <label for="confirm-pass">Confirm Password</label>
+        <input type="password" name="confirm_pass" id="confirm-pass" />
+      </div>
+      <div>
+        <input type="submit" value="Signup" />
+      </div>
+    </form>
+    <%} %>
   </body>
 </html>
